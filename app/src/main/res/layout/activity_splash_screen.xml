@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Splash Screen"
-        android:textSize="30dp"
+        android:text="@string/splash_screen"
+        android:textSize="@dimen/_30sp"
         android:gravity="center"/>
 </LinearLayout>

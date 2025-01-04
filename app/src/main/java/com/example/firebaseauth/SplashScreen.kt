@@ -17,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
         ActivitySplashScreenBinding.inflate(layoutInflater)
     }
     val isUserLogin = Firebase.auth.currentUser
-    lateinit var intent: Intent
+    lateinit var splashIntent: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,9 +28,13 @@ class SplashScreen : AppCompatActivity() {
             insets
         }
         Handler(Looper.getMainLooper()).postDelayed({
-            if (isUserLogin==null){ intent = Intent(this,Login::class.java) }
-            else { intent =Intent(this, MainActivity::class.java) }
-            startActivity(intent)
+            if (isUserLogin==null){
+                splashIntent = Intent(this,Login::class.java)
+            }
+            else {
+                splashIntent =Intent(this, MainActivity::class.java)
+            }
+            startActivity(splashIntent)
             finish()
         },2000)
     }
